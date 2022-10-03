@@ -59,4 +59,10 @@ class despacho extends Espacio{
         $this->ordenadores[]=$ordenador;
     }
     
+    public function imprimirOrdenador(){
+        echo var_dump($SO,$CodHZ);
+    }
+    
+    
 }
+
