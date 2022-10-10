@@ -1,5 +1,6 @@
 <?php
-class despacho extends Espacio{
+include 'Espacio.php';
+class Despacho extends Espacio{
     private $nombre;
     private $docentes=array();
     private $ordenadores=array();
@@ -56,13 +57,18 @@ class despacho extends Espacio{
     }
     
     public function addOrdenador($ordenador){
-        $this->ordenadores[]=$ordenador;
+        $this->ordenadores[$ordenador->getCodHZ()]=$ordenador;
     }
     
-    public function imprimirOrdenador(){
-        echo var_dump($SO,$CodHZ);
+    public function deleteOrdenador($ordenador) {
+        unset($this->ordenadores[$ordenador->getCodHZ()]);
     }
     
+    public function updateOrdenador($ordenador) {
+        $this->ordenadores[$ordenador->getCodHZ()]=$ordenador;
+    }
+   
+   
     
 }
 
